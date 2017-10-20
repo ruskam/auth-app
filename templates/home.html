@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block body %}
+<div id="container">
+    <div class="jumbotron text-center">
+        <h2>RMS Auth App</h2>
+        <hr>
+        <p class="lead">This app is a component of a bigger system and offers an Android app which is also a component of the system for
+            dowloading.
+        </p>
+        {% if session.logged_in == NULL %}
+        <a href="/register" class="btn btn-primary btn-lg" style="width: 100px !important">Register</a>
+        <a href="/login" class="btn btn-success btn-lg" style="width: 100px !important">Login</a> {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
