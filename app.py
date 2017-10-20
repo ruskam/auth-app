@@ -33,7 +33,7 @@ class RegisterForm(Form):
         validators.DataRequired(),
         validators.EqualTo('confirm', message='Passwords do not match')
     ])
-    confirm = PasswordField('Confirm Password')   
+    confirm = PasswordField('Confirm Password')
 
 @app.route('/register', methods=['GET','POST'])
 def register():
@@ -55,7 +55,7 @@ def register():
 
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
-        
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -85,7 +85,7 @@ def login():
         else:
             error = "Username not found"
             return render_template('login.html', error=error)
-    return render_template('login.html')        
+    return render_template('login.html')
 
 def is_logged_in(f):
     @wraps(f)
@@ -112,6 +112,6 @@ def download():
     return render_template('download.html')
 
 if __name__ == '__main__':
-    app.secret_key = 'authapp2017'
+    
     # Start the app in the debugging mode
     app.run(debug=True)
